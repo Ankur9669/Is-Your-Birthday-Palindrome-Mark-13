@@ -1,0 +1,52 @@
+.App {
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+}
+.app-header{
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.sub-heading{
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.description{
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.input{
+  height: 80px;
+  border-radius: 2rem;
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 15px;
+  display: block;
+  margin: auto;
+}
+
+.button{
+  padding: 15px 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 550;
+}
+
+.output{
+  border: 2px solid green;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 7px;
+  margin-right: 7px;
+  padding: 20px;
+}
+
+
