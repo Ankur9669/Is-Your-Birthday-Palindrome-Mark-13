@@ -5,6 +5,14 @@ import Loader from './Loader';
 function App() 
 {
   const [outputMessage, setOutputMessage] = useState("Not Palindrome");
+  const [isLoaderVisible, setLoaderVisibility] = useState(false);
+  function handleSubmit()
+  {
+    setLoaderVisibility(true);
+    setTimeout(() => {
+      setLoaderVisibility(false);
+    }, 1000)
+  }
   return (
     <div className="App">
       <header className = "app-header">Check if Your Birthday Is Palindrome</header>
@@ -16,11 +24,16 @@ function App()
 e.g. if your birthdate is 01 Aug 1995, then app will check for 19950801, 01081995, 080195, 1081995</p>
 
       <input type = "date" className = "input"></input>
-      <button className = "button">Check</button>
+      <button className = "button" onClick = {() => handleSubmit()}>Check</button>
 
-      <div className = "output">
-        {outputMessage}
-      </div>
+      {isLoaderVisible && <Loader/>}
+      
+      {!isLoaderVisible && 
+        <div className = "output">
+          {outputMessage}  
+        </div>
+      }
+      
     </div>
   );
 }
