@@ -2,7 +2,7 @@
   text-align: center;
   display: flex;
   justify-content: center;
-  margin-top: 25px;
+  
 }
 .container{
   max-width: 600px;
@@ -11,6 +11,8 @@
   border: 2px solid green;
   padding: 30px;
   border-radius: 20px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 .app-header{
   font-size: 2rem;
@@ -31,7 +33,7 @@
 }
 
 .input{
-  height: 80px;
+  height: 60px;
   border-radius: 2rem;
   text-align: center;
   font-size: 1.1rem;
