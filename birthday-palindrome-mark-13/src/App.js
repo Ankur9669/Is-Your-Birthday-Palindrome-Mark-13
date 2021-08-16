@@ -9,8 +9,6 @@ function App()
   const [date, setDate] = useState();
   let date1;
   let daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-  let sumOfMonth = [31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365];
-  let sumOfMonthLeapYear = [31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366];
 
   //On Clicking Submit button the control would come here
   function handleSubmit()
@@ -39,15 +37,16 @@ function App()
     let mmddyyyy = month + date2 + year;
     let yyyymmdd = year + month + date2;
 
+    //If date is palindrome it would go here.
     if(checkPalindrome(ddmmyyyy) || checkPalindrome(mmddyyyy) || checkPalindrome(yyyymmdd))
     {
         const date2 = new Date(date);
         const date3 = new Date(date1);
         const diffTime = Math.abs(date3 - date2);
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
-        console.log(diffDays + " days");
-        console.log(date1);
-        console.log("Your Birthday is a palindrome");
+        // console.log(diffDays + " days");
+        // console.log(date1);
+        // console.log("Your Birthday is a palindrome");
         if(diffDays === 0)
         {
           setOutputMessage("Wooh ur BirthDay is a Palindrome");
@@ -57,15 +56,9 @@ function App()
         }
     }
     else{
-      //console.log("lets work on getting the nearest palindrome date");
+      //If date is not palindrome we increse date by 1.
       getNextDate(date1);
     }
-  }
-
-  function calculateDifference(date1, date2)
-  {
-    let tempDate1 = new Date(date1);
-    let tempDate2 = new Date(date2);
   }
 
   function getNextDate(date1)

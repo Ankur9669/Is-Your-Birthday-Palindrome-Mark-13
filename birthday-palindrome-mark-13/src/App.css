@@ -2,6 +2,7 @@
   text-align: center;
   max-width: 600px;
   margin: auto;
+  margin-top: 25px;
 }
 .app-header{
   font-size: 2rem;
@@ -47,6 +48,8 @@
   margin-left: 7px;
   margin-right: 7px;
   padding: 20px;
+  font-size: 1.1rem;
+  font-weight: 550;
 }
 
 
