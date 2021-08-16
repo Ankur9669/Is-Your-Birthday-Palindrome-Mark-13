@@ -195,7 +195,7 @@ function App()
       <label for = "description" className = "sub-heading">Enter your birthdate and we will 
       tell you if your birthdate is a palindrome</label>
 
-      <p className = "description">This app checks your birthdate in 4 formats yyyy-mm-dd, dd-mm-yyyy, mm-dd-yy, m-dd-yyyy
+      <p className = "description">This app checks your birthdate in 3 formats yyyy-mm-dd, dd-mm-yyyy, mm-dd-yy
 e.g. if your birthdate is 01 Aug 1995, then app will check for 19950801, 01081995, 080195, 1081995</p>
 
       <input type = "date" className = "input" onChange = {(e) => setDate(e.target.value)}></input>
