@@ -189,6 +189,7 @@ function App()
 
   return (
     <div className="App">
+      <div className = "container">
       <header className = "app-header">Check if Your Birthday Is Palindrome</header>
 
       <label for = "description" className = "sub-heading">Enter your birthdate and we will 
@@ -207,7 +208,7 @@ e.g. if your birthdate is 01 Aug 1995, then app will check for 19950801, 0108199
           {outputMessage}  
         </div>
       }
-      
+      </div>
     </div>
   );
 }
