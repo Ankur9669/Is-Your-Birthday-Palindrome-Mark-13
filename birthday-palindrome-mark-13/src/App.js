@@ -44,7 +44,7 @@ function App()
     else{
       let nextDate = getNextPalindromeDate(date1);
       //console.log(nextDate);
-      setOutputMessage("Next Date is: " + nextDate[1].day + "-" + nextDate[1].month + "-" + nextDate[1].year + " You Missed it by: " + nextDate[0] + "Days");
+      setOutputMessage("Next Date is: " + nextDate[1].day + "-" + nextDate[1].month + "-" + nextDate[1].year + " You Missed it by: " + nextDate[0] + " Days");
       console.log();
     }
   }
@@ -177,7 +177,7 @@ function App()
     var nextDate = getNextDate(date);
     let date1 = new Date(nextDate.year, nextDate.month, nextDate.day);
     //console.log(date)
-    console.log(date1);
+    //console.log(date1);
     var ctr = 0;
   
     while (1) {
@@ -198,7 +198,7 @@ function App()
       //break;
       nextDate = getNextDate(date1);
       date1 = new Date(nextDate.year, nextDate.month, nextDate.day);
-      //console.log(date1);
+      console.log(date1);
     }
   }
 
