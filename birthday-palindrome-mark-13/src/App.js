@@ -6,7 +6,7 @@ function App()
 {
   const [outputMessage, setOutputMessage] = useState("Not Palindrome");
   const [isLoaderVisible, setLoaderVisibility] = useState(false);
-  const [date, setDate] = useState();
+  const [date, setDate] = useState(null);
   let date1;
   let daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
@@ -14,7 +14,15 @@ function App()
   function handleSubmit()
   {
     setLoaderVisibility(true);
-    givePalindrome();
+    console.log(date);
+    if(date === null)
+    {
+      setOutputMessage("Pls Enter the Date");
+    }
+    else{
+      givePalindrome();
+    }
+     
     setTimeout(() => 
     {
       setLoaderVisibility(false);
@@ -44,7 +52,7 @@ function App()
     else{
       let nextDate = getNextPalindromeDate(date1);
       //console.log(nextDate);
-      setOutputMessage("Next Date is: " + nextDate[1].day + "-" + nextDate[1].month + "-" + nextDate[1].year + " You Missed it by: " + nextDate[0] + " Days");
+      setOutputMessage("Next Date is: " + nextDate[1].day + "-" + (parseInt(nextDate[1].month + 1)) + "-" + nextDate[1].year + " You Missed it by: " + nextDate[0] + " Days");
       console.log();
     }
   }
@@ -130,27 +138,28 @@ function App()
   function getNextDate(date) {
     var day = parseInt(date.getDate()) + 1;
     var month = parseInt(date.getMonth());
+    console.log(month)
     var year = parseInt(date.getFullYear());
     
   
     var daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   
-    if (month === 2) {
+    if (month === 1) {
       if (isLeapYear(year)) {
         if (parseInt(day) > 29) {
           day = 1;
-          month = 3;
+          month = 2;
         }
       }
       else {
         if (parseInt(day) > 28) {
           day = 1;
-          month = 3;
+          month = 2;
         }
       }
     }
     else {
-      if (parseInt(day) > daysInMonth[month - 1]) {
+      if (parseInt(day) > daysInMonth[month]) {
         //console.log(day + ">" + daysInMonth[month-1]);
         day = 1;
         month++;
@@ -158,8 +167,8 @@ function App()
       }
     }
   
-    if (parseInt(month) > 12) {
-      month = 1;
+    if (parseInt(month) > 11) {
+      month = 0;
       year++;
     }
   
@@ -176,7 +185,7 @@ function App()
     //console.log(date);
     var nextDate = getNextDate(date);
     let date1 = new Date(nextDate.year, nextDate.month, nextDate.day);
-    //console.log(date)
+    console.log(nextDate)
     //console.log(date1);
     var ctr = 0;
   
@@ -195,10 +204,9 @@ function App()
         }
         //console.log(dateInAllFormats[i]);
       }
-      //break;
       nextDate = getNextDate(date1);
       date1 = new Date(nextDate.year, nextDate.month, nextDate.day);
-      console.log(date1);
+      console.log(nextDate);
     }
   }
 
