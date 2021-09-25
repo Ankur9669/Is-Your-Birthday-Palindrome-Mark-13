@@ -35,12 +35,10 @@ function App()
     let dateInStr = getDateAsString(date1);
     let dateInAllFormats = getDatesInAllFormat(dateInStr);
     let isPalindrome = false;
-    //console.log(dateInAllFormats);
     for (let i = 0; i < dateInAllFormats.length; i++)
     {
       if(checkPalindrome(dateInAllFormats[i]))
       {
-        //console.log("Yes")
         isPalindrome = true;
         break;
       }
@@ -52,14 +50,21 @@ function App()
     else{
       let nextDate = getNextPalindromeDate(date1);
       //console.log(nextDate);
-      setOutputMessage("Next Date is: " + nextDate[1].day + "-" + (parseInt(nextDate[1].month + 1)) + "-" + nextDate[1].year + " You Missed it by: " + nextDate[0] + " Days");
+      setOutputMessage("Next Date is: " 
+      + nextDate[1].day + 
+      "-" + 
+      (parseInt(nextDate[1].month + 1)) +
+       "-" + 
+       nextDate[1].year + 
+       " You Missed it by: " 
+       + nextDate[0] + 
+       " Days");
       console.log();
     }
   }
 
   function getDateAsString(date)
   {
-    //console.log(date.getDate())
     var dateInStr = {day: '', month: '', year: ''};
     if(parseInt(date.getDate()) < 10){
       dateInStr.day = '0' + date.getDate();
